@@ -11,7 +11,7 @@
 		"typeRoots": ["./node_modules/@types", "./src/types"],
 		"noUnusedParameters": false
 	},
-	"include": ["src/**/*.ts", "src/bin/www"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules"]
   }
   
