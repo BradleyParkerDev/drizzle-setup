@@ -66,10 +66,12 @@ drizzle-setup/
 3. **Set up your environment variables:**
     - Create a .env file in the root directory.
 
-    - Add the following database connection variables:
+    - Add the following variables:
 
     ```env
-    DATABASE_URL=postgresql://username:password@localhost:5432/drizzle_setup
+    USE_NEON=false
+    NEON_DATABASE_URL=postgresql://username:password@localhost:5432/neon_db
+    LOCAL_DATABASE_URL=postgresql://username:password@localhost:5432/local_db
     ```
 
 4. **Generate the database schema using Drizzle:**
