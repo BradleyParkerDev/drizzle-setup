@@ -70,7 +70,7 @@ drizzle-setup/
 
     ```env
     USE_NEON=false
-    NEON_DATABASE_URL=postgresql://username:password@localhost:5432/neon_db
+    NEON_DATABASE_URL=postgresql://username:password@neonhost:5432/neon_db
     LOCAL_DATABASE_URL=postgresql://username:password@localhost:5432/local_db
     ```
 
