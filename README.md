@@ -34,9 +34,10 @@ drizzle-setup/
 ├── .gitignore              # Files to exclude from Git tracking
 ├── drizzle.config.ts       # Drizzle ORM configuration file
 ├── example.env             # Example environment variables file
+├── package-lock.json       # 
 ├── package.json            # Defines project dependencies and npm scripts
-├── tsconfig.json           # TypeScript configuration file
-└── README.md               # Project documentation
+├── README.md               # Project documentation
+└── tsconfig.json           # TypeScript configuration file
 
 ```
 
