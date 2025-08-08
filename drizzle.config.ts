@@ -4,19 +4,24 @@ import dotenv from 'dotenv';
 // Load environment variables
 dotenv.config();
 
-// Determine database connection type
 // Explicit boolean conversion with fallback to false
 const useNeon = process.env.USE_NEON === 'true' || false;
 
-// Select the appropriate connection string
-const connectionString = useNeon ? process.env.NEON_DATABASE_URL as string : process.env.LOCAL_DATABASE_URL as string;
+const neonUrl = process.env.NEON_DATABASE_URL;
+const localUrl = process.env.LOCAL_DATABASE_URL;
 
-console.log(connectionString)
-// Validate the connection string
-if (!connectionString) {
-	throw new Error(
-		`Environment variable ${useNeon ? 'NEON_DATABASE_URL' : 'LOCAL_DATABASE_URL'} is not defined`
-	);
+let connectionString = '';
+
+if (useNeon && neonUrl) {
+	if (!neonUrl) {
+		throw new Error('USE_NEON is true but NEON_DATABASE_URL is not defined.');
+	}
+	connectionString = neonUrl;
+} else {
+	if (!localUrl) {
+		throw new Error('USE_NEON is false but LOCAL_DATABASE_URL is not defined.');
+	}
+	connectionString = localUrl;
 }
 
 // Export Drizzle configuration

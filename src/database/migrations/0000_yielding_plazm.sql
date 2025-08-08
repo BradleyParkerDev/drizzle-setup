@@ -1,14 +1,3 @@
-CREATE TABLE "images" (
-	"image_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"user_id" uuid NOT NULL,
-	"image_url" text NOT NULL,
-	"name" text,
-	"album" text,
-	"last_updated" timestamp DEFAULT now() NOT NULL,
-	"created_at" timestamp DEFAULT now() NOT NULL,
-	CONSTRAINT "images_image_id_unique" UNIQUE("image_id")
-);
---> statement-breakpoint
 CREATE TABLE "session_cron_jobs" (
 	"cron_job_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"last_checked" timestamp NOT NULL,
@@ -25,7 +14,6 @@ CREATE TABLE "user_sessions" (
 --> statement-breakpoint
 CREATE TABLE "users" (
 	"user_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"user_image" text,
 	"first_name" text NOT NULL,
 	"last_name" text NOT NULL,
 	"email_address" text NOT NULL,
@@ -38,5 +26,4 @@ CREATE TABLE "users" (
 	CONSTRAINT "users_user_name_unique" UNIQUE("user_name")
 );
 --> statement-breakpoint
-ALTER TABLE "images" ADD CONSTRAINT "images_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("user_id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "user_sessions" ADD CONSTRAINT "user_sessions_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("user_id") ON DELETE no action ON UPDATE no action;
