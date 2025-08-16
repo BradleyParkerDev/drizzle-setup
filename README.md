@@ -27,9 +27,8 @@ drizzle-setup/
 │ ├── database/             # Database-related files
 │ │ ├── migrations/         # Migration files for database changes
 │ │ ├── schemas/            # Drizzle ORM schema definitions
-│ │ ├── localDb.ts          # Configuration for local PostgreSQL database
-│ │ ├── migrate.ts          # Script to run database migrations
-│ │ └── neonDb.ts           # Configuration for NeonDB (serverless PostgreSQL)
+│ │ ├── db.ts               # Configuration for PostgreSQL database
+│ │ └── migrate.ts          # Script to run database migrations
 │ └── types/                # TypeScript type definitions (if needed)
 ├── .gitignore              # Files to exclude from Git tracking
 ├── drizzle.config.ts       # Drizzle ORM configuration file
