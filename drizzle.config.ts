@@ -23,7 +23,7 @@ if (!connectionString) {
 
 // Export Drizzle configuration
 export default defineConfig({
-	schema: './src/database/schemas', // Path to your schema files
+	schema: './dist/database/schemas/index.js', // Path to your schema files
 	out: './src/database/migrations', // Output folder for migrations
 	dialect: 'postgresql', // Specify the database dialect
 	dbCredentials: {

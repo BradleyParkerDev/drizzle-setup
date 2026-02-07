@@ -1,6 +1,6 @@
 import { pgTable, text, uuid, timestamp } from 'drizzle-orm/pg-core';
 
-const User = pgTable('users', {
+export const users = pgTable('users', {
 	userId: uuid('user_id').primaryKey().defaultRandom().unique(), // UUID v4 primary key
 	firstName: text('first_name').notNull(), // Not nullable text field
 	lastName: text('last_name').notNull(), // Not nullable text field
@@ -10,5 +10,3 @@ const User = pgTable('users', {
 	lastUpdated: timestamp('last_updated').defaultNow().notNull(), // Update timestamp on modification
 	createdAt: timestamp('created_at').defaultNow().notNull(), // Only set on creation
 });
-
-export default User;

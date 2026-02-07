@@ -2,7 +2,7 @@
 // Unified DB Connection (Neon or Local)
 ///////////////////////////////////////////////////////////////////////
 import dotenv from 'dotenv';
-import * as schema from './schemas';
+import * as schema from './schemas/index.js';
 
 import pg from 'pg';
 import { drizzle as drizzleLocal } from 'drizzle-orm/node-postgres';

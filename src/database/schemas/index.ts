@@ -1,7 +1,2 @@
-import User from './Users';
-import Session from './Sessions';
-
-export default {
-	Session,
-	User,
-};
+export * from './Users.js';
+export * from './Sessions.js';

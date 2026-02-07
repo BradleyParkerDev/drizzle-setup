@@ -1,4 +1,4 @@
-# Drizzle Setup
+# Drizzle Setup (transpiled-js)
 
 This is a TypeScript-based Drizzle ORM setup for working with PostgreSQL. It includes database schema management, migrations, and query execution using Drizzle ORM.
 
@@ -8,17 +8,22 @@ This project is built with TypeScript and Drizzle ORM, designed to provide a cle
 
 - Database schema definition (using Drizzle ORM)
 - Migrations & schema generation
-- Database connections (local & remote using NeonDB)
+- Database connections (single DB configuration for local or Neon)
 - Type-safe SQL queries with PostgreSQL
+
+## Branch Notes
+
+The `transpiled-js` branch runs the same scripts as `main`, but it builds TypeScript into JavaScript first and then runs the compiled JS. It uses `NodeNext` as the TypeScript module target (instead of `commonjs`).
 
 ## Features
 
 - Drizzle ORM – A modern TypeScript ORM with type-safe SQL queries.
-- PostgreSQL Support – Works with local and serverless databases like NeonDB.
+- PostgreSQL Support – Works with local or serverless databases like Neon.
 - Migrations & Schema Generation – Easily manage database versions.
 - TypeScript Support – Ensures type safety and clean database operations.
 
 ## Project Structure
+
 ```
 drizzle-setup/
 ├── dist/                   # Output directory for compiled TypeScript files
@@ -27,9 +32,9 @@ drizzle-setup/
 │ ├── database/             # Database-related files
 │ │ ├── migrations/         # Migration files for database changes
 │ │ ├── schemas/            # Drizzle ORM schema definitions
-│ │ ├── localDb.ts          # Configuration for local PostgreSQL database
-│ │ ├── migrate.ts          # Script to run database migrations
-│ │ └── neonDb.ts           # Configuration for NeonDB (serverless PostgreSQL)
+│ │ ├── db.ts               # Unified database configuration
+│ │ └── migrate.ts          # Script to run database migrations
+│ │ └── seed.ts             # Script to seed the database
 │ └── types/                # TypeScript type definitions (if needed)
 ├── .gitignore              # Files to exclude from Git tracking
 ├── drizzle.config.ts       # Drizzle ORM configuration file
@@ -101,13 +106,13 @@ drizzle-setup/
 
 ## Available Scripts
 
-| Script                      | Description                                |
-|------------------------------|--------------------------------------------|
-| `npm run build` | Compiles TypeScript (tsc) and removes old build files (rimraf). |
-| `npm run db:generate`        | Generates a schema snapshot based on Drizzle ORM definitions.               |
-| `npm run db:migrate`        | Runs database migrations (migrate.ts).                  |
-| `npm run db:push`        | Pushes schema changes to the database using Drizzle ORM.                  |
-| `npm run db:studio`        | Opens Drizzle Studio for visualizing the database.                  |
+| Script                | Description                                                     |
+| --------------------- | --------------------------------------------------------------- |
+| `npm run build`       | Compiles TypeScript (tsc) and removes old build files (rimraf). |
+| `npm run db:generate` | Generates a schema snapshot based on Drizzle ORM definitions.   |
+| `npm run db:migrate`  | Runs database migrations (migrate.ts).                          |
+| `npm run db:push`     | Pushes schema changes to the database using Drizzle ORM.        |
+| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.              |
 
 ## Dependencies
 

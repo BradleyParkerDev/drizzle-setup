@@ -1,5 +1,5 @@
-import { db } from './db';
-import User from './schemas/Users';
+import { db } from './db.js';
+import { users } from './schemas/Users.js';
 
 const firstNames = [
 	'Avery',
@@ -57,9 +57,9 @@ const main = async () => {
 		throw new Error('Seed count must be a positive number');
 	}
 
-	const users = Array.from({ length: count }, (_, i) => makeUser(i + 1));
+	const userRows = Array.from({ length: count }, (_, i) => makeUser(i + 1));
 
-	await db.insert(User).values(users);
+	await db.insert(users).values(userRows);
 
 	console.log(`Seeded ${count} user${count === 1 ? '' : 's'}`);
 };

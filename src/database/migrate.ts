@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////
 import { migrate as neonMigrate } from 'drizzle-orm/neon-serverless/migrator';
 import { migrate as localMigrate } from 'drizzle-orm/node-postgres/migrator';
-import { db, useNeon } from './db';
+import { db, useNeon } from './db.js';
 import dotenv from 'dotenv';
 import path from 'path';
 
