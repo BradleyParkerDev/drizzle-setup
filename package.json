@@ -2,7 +2,8 @@
 	"name": "drizzle-setup",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "rimraf dist && npx tsc",
+		"clean": "rimraf dist",
+		"build": "npm run clean && npx tsc",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "npx tsx ./src/database/migrate.ts",
 		"db:seed": "npx tsx ./src/database/seed.ts",
