@@ -1,7 +1,6 @@
 {
 	"name": "drizzle-setup",
 	"version": "1.0.0",
-	"type": "module",
 	"scripts": {
 		"build": "rimraf dist && npx tsc",
 		"db:generate": "drizzle-kit generate",
