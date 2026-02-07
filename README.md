@@ -106,13 +106,13 @@ drizzle-setup/
 
 ## Available Scripts
 
-| Script                | Description                                                     |
-| --------------------- | --------------------------------------------------------------- |
-| `npm run build`       | Compiles TypeScript (tsc) and removes old build files (rimraf). |
-| `npm run db:generate` | Generates a schema snapshot based on Drizzle ORM definitions.   |
-| `npm run db:migrate`  | Runs database migrations (migrate.ts).                          |
-| `npm run db:push`     | Pushes schema changes to the database using Drizzle ORM.        |
-| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.              |
+| Script                | Description                                                              |
+| --------------------- | ------------------------------------------------------------------------ |
+| `npm run build`       | Removes old build files (rimraf) then compiles TypeScript (tsc).         |
+| `npm run db:generate` | Generates a migration file based on Drizzle ORM definitions.             |
+| `npm run db:migrate`  | Runs database migration files on database (migrate.ts).                  |
+| `npm run db:push`     | Pushes schema changes to the database without generating migration file. |
+| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.                       |
 
 ## Dependencies
 
