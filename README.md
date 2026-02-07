@@ -1,4 +1,4 @@
-# Drizzle Setup
+# Drizzle Setup (transpiled-js)
 
 This is a TypeScript-based Drizzle ORM setup for working with PostgreSQL. It includes database schema management, migrations, and query execution using Drizzle ORM.
 
@@ -8,13 +8,17 @@ This project is built with TypeScript and Drizzle ORM, designed to provide a cle
 
 - Database schema definition (using Drizzle ORM)
 - Migrations & schema generation
-- Database connections (local & remote using NeonDB)
+- Database connections (single DB configuration for local or Neon)
 - Type-safe SQL queries with PostgreSQL
+
+## Branch Notes
+
+The `transpiled-js` branch runs the same scripts as `main`, but it builds TypeScript into JavaScript first and then runs the compiled JS. It uses `NodeNext` as the TypeScript module target (instead of `commonjs`).
 
 ## Features
 
 - Drizzle ORM – A modern TypeScript ORM with type-safe SQL queries.
-- PostgreSQL Support – Works with local and serverless databases like NeonDB.
+- PostgreSQL Support – Works with local or serverless databases like Neon.
 - Migrations & Schema Generation – Easily manage database versions.
 - TypeScript Support – Ensures type safety and clean database operations.
 
@@ -88,7 +92,7 @@ drizzle-setup/
     npm run db:migrate
     ```
 
-6. **Push schema changes to the database directly:**
+6. **Push schema changes to the database:**
 
     ```sh
     npm run db:push
@@ -102,14 +106,14 @@ drizzle-setup/
 
 ## Available Scripts
 
-| Script                | Description                                                                       |
-| --------------------- | --------------------------------------------------------------------------------- |
-| `npm run clean`       | Removes old build files (rimraf).                                                 |
-| `npm run build`       | Removes old build files (rimraf) and compiles TypeScript (tsc).                   |
-| `npm run db:generate` | Generates a migration file based on Drizzle ORM definitions in schemas directory. |
-| `npm run db:migrate`  | Runs migration files on database (migrate.ts).                                    |
-| `npm run db:push`     | Pushes schema changes directly to the database without migrating.                 |
-| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.                                |
+| Script                | Description                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------- |
+| `npm run clean`       | Removes old build files (rimraf).                                                       |
+| `npm run build`       | Removes old build files (rimraf), and then transpiles TypeScript (tsc) into JavaScript. |
+| `npm run db:generate` | Generates a migration file based on Drizzle ORM definitions in schemas directory.       |
+| `npm run db:migrate`  | Runs database migration files on database (migrate.ts).                                 |
+| `npm run db:push`     | Pushes schema changes directly to the database without migrating.                       |
+| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.                                      |
 
 ## Dependencies
 
