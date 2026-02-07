@@ -1,8 +1,7 @@
-import CronJobs from "./SessionCronJobs";
-import User from "./Users";
-import UserSession from "./UserSessions";
+import User from './Users';
+import Session from './Sessions';
+
 export default {
-    CronJobs,
-    User,
-    UserSession
-}
+	Session,
+	User,
+};

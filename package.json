@@ -1,31 +1,33 @@
 {
-  "name": "drizzle-setup",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "rimraf dist && npx tsc",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "npx tsx ./src/database/migrate.ts",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@neondatabase/serverless": "^0.10.4",
-    "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.40.0",
-    "pg": "^8.13.3",
-    "rimraf": "^6.0.1",
-    "ws": "^8.18.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.5",
-    "@types/pg": "^8.11.11",
-    "@types/ws": "^8.5.14",
-    "drizzle-kit": "^0.30.5",
-    "tsx": "^4.19.3",
-    "typescript": "^5.7.2"
-  }
+	"name": "drizzle-setup",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "rimraf dist && npx tsc",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "npx tsx ./src/database/migrate.ts",
+		"db:seed": "npx tsx ./src/database/seed.ts",
+		"db:push": "drizzle-kit push",
+		"db:studio": "drizzle-kit studio"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@neondatabase/serverless": "^0.10.4",
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.40.0",
+		"pg": "^8.13.3",
+		"rimraf": "^6.0.1",
+		"ws": "^8.18.1"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.5",
+		"@types/pg": "^8.11.11",
+		"@types/ws": "^8.5.14",
+		"drizzle-kit": "^0.30.5",
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.2"
+	}
 }

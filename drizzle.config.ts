@@ -9,13 +9,15 @@ dotenv.config();
 const useNeon = process.env.USE_NEON === 'true' || false;
 
 // Select the appropriate connection string
-const connectionString = useNeon ? process.env.NEON_DATABASE_URL as string : process.env.LOCAL_DATABASE_URL as string;
+const connectionString = useNeon
+	? (process.env.NEON_DATABASE_URL as string)
+	: (process.env.LOCAL_DATABASE_URL as string);
 
-console.log(connectionString)
+console.log(connectionString);
 // Validate the connection string
 if (!connectionString) {
 	throw new Error(
-		`Environment variable ${useNeon ? 'NEON_DATABASE_URL' : 'LOCAL_DATABASE_URL'} is not defined`
+		`Environment variable ${useNeon ? 'NEON_DATABASE_URL' : 'LOCAL_DATABASE_URL'} is not defined`,
 	);
 }
 
