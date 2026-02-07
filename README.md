@@ -1,4 +1,4 @@
-# Drizzle Setup (transpiled-js)
+# Drizzle Setup
 
 This is a TypeScript-based Drizzle ORM setup for working with PostgreSQL. It includes database schema management, migrations, and query execution using Drizzle ORM.
 
@@ -10,10 +10,6 @@ This project is built with TypeScript and Drizzle ORM, designed to provide a cle
 - Migrations & schema generation
 - Database connections (single DB configuration for local or Neon)
 - Type-safe SQL queries with PostgreSQL
-
-## Branch Notes
-
-The `transpiled-js` branch runs the same scripts as `main`, but it builds TypeScript into JavaScript first and then runs the compiled JS. It uses `NodeNext` as the TypeScript module target (instead of `commonjs`).
 
 ## Features
 
