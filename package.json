@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "rimraf dist && npx tsc",
+		"clean": "rimraf dist",
+		"build": "npm run clean && npx tsc",
 		"db:generate": "npm run build && drizzle-kit generate",
 		"db:migrate": "npx tsx ./src/database/migrate.ts",
 		"db:seed": "npx tsx ./src/database/seed.ts",

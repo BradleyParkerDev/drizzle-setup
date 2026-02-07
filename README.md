@@ -51,7 +51,7 @@ drizzle-setup/
 ### Prerequisites
 
 - Node.js (v22.13.1 or higher)
-- npm (11.1.0 or higher)
+- npm (11.6.2 or higher)
 - PostgreSQL (Local or Remote, e.g., NeonDB)
 
 ### Installation
@@ -106,13 +106,14 @@ drizzle-setup/
 
 ## Available Scripts
 
-| Script                | Description                                                              |
-| --------------------- | ------------------------------------------------------------------------ |
-| `npm run build`       | Removes old build files (rimraf) then compiles TypeScript (tsc).         |
-| `npm run db:generate` | Generates a migration file based on Drizzle ORM definitions.             |
-| `npm run db:migrate`  | Runs database migration files on database (migrate.ts).                  |
-| `npm run db:push`     | Pushes schema changes to the database without generating migration file. |
-| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.                       |
+| Script                | Description                                                                         |
+| --------------------- | ----------------------------------------------------------------------------------- |
+| `npm run clean`       | Removes old build files (rimraf).                                                   |
+| `npm run build`       | Removes old build files (rimraf), then transpiles TypeScript (tsc) into JavaScript. |
+| `npm run db:generate` | Generates a migration file based on Drizzle ORM definitions in schemas directory.   |
+| `npm run db:migrate`  | Runs migration files on database (migrate.ts).                                      |
+| `npm run db:push`     | Pushes schema changes directly to the database without migrating.                   |
+| `npm run db:studio`   | Opens Drizzle Studio for visualizing the database.                                  |
 
 ## Dependencies
 
