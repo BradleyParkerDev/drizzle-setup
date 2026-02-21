@@ -17,7 +17,7 @@
 	"dependencies": {
 		"@neondatabase/serverless": "^0.10.4",
 		"dotenv": "^16.4.7",
-		"drizzle-orm": "^0.40.0",
+		"drizzle-orm": "^0.45.1",
 		"pg": "^8.13.3",
 		"rimraf": "^6.0.1",
 		"ws": "^8.18.1"
